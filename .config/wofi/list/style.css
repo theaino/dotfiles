@@ -65,8 +65,9 @@ window {
   border-width: 0.16em;
   border-style: solid;
   border-image: linear-gradient(to right, @sapphire, @green) 30;
-  background-color: @base;
-  animation: fadeIn 0.25s ease-in-out both;
+  animation: 100s linear infinite backgroundShade;
+  animation-delay: -75s;
+  animation-play-state: paused;
 }
 
 /* Inner Box */
@@ -74,8 +75,18 @@ window {
   margin: 5px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: transparent;
   animation: fadeIn 0.25s ease-in-out both;
+}
+
+@keyframes backgroundShade {
+  0% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: @base;
+  }
 }
 
 /* Fade In */
@@ -94,7 +105,7 @@ window {
   margin: 5px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: transparent;
 }
 
 /* Scroll */
@@ -102,7 +113,7 @@ window {
   margin: 0px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: transparent;
 }
 
 /* Input */
@@ -111,7 +122,7 @@ window {
   padding: 10px;
   border: none;
   color: @text;
-  background-color: @base;
+  background-color: transparent;
   animation: fadeIn 0.25s ease-in-out both;
 }
 
@@ -133,7 +144,7 @@ window {
 }
 
 #entry {
-  background-color: @base;
+  background-color: transparent;
   border-width: 0.11em;
   border-style: solid;
   border-color: @base;
