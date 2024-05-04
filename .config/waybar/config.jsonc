@@ -44,11 +44,12 @@
 
   "custom/pacman": {
     "format": "  {}",
-    "interval": 60, // 5 minutes
-    "exec": "(checkupdates && yay -Qua) | wc -l",
+    "interval": 60,
+    "return-type": "json",
+    "exec": "$HOME/.config/hypr/scripts/waybar-pacman.py",
     "exec-if": "exit 0",
-    "on-click": "(kitty yay) ; notify-send 'Successfully updated system.'",
-    "tooltip": false
+    "on-click": "(kitty yay) ; pkill -SIGRTMIN+8 waybar",
+	  "signal": 8
   },
 
   "custom/windows": {

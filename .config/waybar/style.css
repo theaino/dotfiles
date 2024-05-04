@@ -15,6 +15,14 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+tooltip {
+  background-color: @mantle;
+  border-color: @crust;
+  border-style: solid;
+  border-width: 2px;
+  color: @text;
+}
+
 #custom-launcher {
   margin-right: 0px;
   padding-left: 16px;
