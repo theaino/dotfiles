@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-CONFIG="$HOME/.config/wofi/config/config"
-STYLE="$HOME/.config/wofi/src/mocha/style.css"
+WOFI=$HOME/.config/wofi/wofi.sh
 
 show_menu() {
-	action=$(echo -e " Shutdown\n Reboot\n󰽥 Suspend\n Lock" | wofi --conf "${CONFIG}" --style "${STYLE}" -i --dmenu | awk '{print tolower($2)}')
+	action=$(echo -e " Shutdown\n Reboot\n󰽥 Suspend\n Lock" | eval "$($WOFI list) -i --dmenu" | awk '{print tolower($2)}')
 	case $action in
 	lock)
 		swaylock

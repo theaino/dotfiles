@@ -48,8 +48,7 @@
     "return-type": "json",
     "exec": "$HOME/.config/hypr/scripts/waybar-pacman.py",
     "exec-if": "exit 0",
-    "on-click": "(kitty yay) ; pkill -SIGRTMIN+8 waybar",
-	  "signal": 8
+    "on-click": "kitty yay"
   },
 
   "custom/windows": {

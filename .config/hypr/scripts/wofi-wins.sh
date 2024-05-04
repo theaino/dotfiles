@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-CONFIG="$HOME/.config/wofi/config/config"
-STYLE="$HOME/.config/wofi/src/mocha/style.css"
+WOFI=$HOME/.config/wofi/wofi.sh
 
 if [[ ! $(pidof wofi) ]]; then
-	echo -e "wofi --conf \"${CONFIG}\" --style \"${STYLE}\" --dmenu" | python3 $HOME/.config/hypr/scripts/hyprwins/main.py
+	echo -e "$($WOFI table) --dmenu" | python3 $HOME/.config/hypr/scripts/hyprwins/main.py
 else
 	pkill wofi
 fi

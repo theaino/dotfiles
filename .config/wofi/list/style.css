@@ -51,30 +51,22 @@
 @define-color	crust  #11111b;
 @define-color	crust-rgb  rgb(17, 17, 27);
 
+
 * {
-  font-family: 'JetBrainsMono Nerd Font', monospace;
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
+  border-radius: 0;
 }
 
 /* Window */
 window {
   margin: 0px;
   padding: 10px;
-  border: 0.16em solid @lavender;
-  border-radius: 0.1em;
+  border-width: 0.16em;
+  border-style: solid;
+  border-image: linear-gradient(to right, @sapphire, @green) 30;
   background-color: @base;
-  animation: slideIn 0.5s ease-in-out both;
-}
-
-/* Slide In */
-@keyframes slideIn {
-  0% {
-     opacity: 0;
-  }
-
-  100% {
-     opacity: 1;
-  }
+  animation: fadeIn 0.25s ease-in-out both;
 }
 
 /* Inner Box */
@@ -83,7 +75,7 @@ window {
   padding: 10px;
   border: none;
   background-color: @base;
-  animation: fadeIn 0.5s ease-in-out both;
+  animation: fadeIn 0.25s ease-in-out both;
 }
 
 /* Fade In */
@@ -118,19 +110,18 @@ window {
   margin: 5px 20px;
   padding: 10px;
   border: none;
-  border-radius: 0.1em;
   color: @text;
   background-color: @base;
-  animation: fadeIn 0.5s ease-in-out both;
+  animation: fadeIn 0.25s ease-in-out both;
 }
 
 #input image {
-    border: none;
-    color: @red;
+  border: none;
+  color: @mauve;
 }
 
 #input * {
-  outline: 4px solid @red!important;
+  outline: 4px solid @mauve!important;
 }
 
 /* Text */
@@ -138,27 +129,26 @@ window {
   margin: 5px;
   border: none;
   color: @text;
-  animation: fadeIn 0.5s ease-in-out both;
+  animation: fadeIn 0.25s ease-in-out both;
 }
 
 #entry {
   background-color: @base;
+  border-width: 0.11em;
+  border-style: solid;
+  border-color: @base;
 }
 
 #entry arrow {
   border: none;
-  color: @lavender;
+  color: @sapphire;
 }
 
 /* Selected Entry */
 #entry:selected {
-  border: 0.11em solid @lavender;
+  border-color: @sapphire;
 }
 
 #entry:selected #text {
-  color: @mauve;
-}
-
-#entry:drop(active) {
-  background-color: @lavender!important;
+  color: @green;
 }
