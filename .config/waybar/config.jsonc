@@ -48,7 +48,7 @@
     "return-type": "json",
     "exec": "$HOME/.config/hypr/scripts/waybar-pacman.py",
     "exec-if": "exit 0",
-    "on-click": "kitty yay"
+    "on-click": "alacritty --command yay"
   },
 
   "custom/windows": {

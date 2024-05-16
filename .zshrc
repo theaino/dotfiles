@@ -102,6 +102,11 @@ source $ZSH/oh-my-zsh.sh
 
 
 eval "$(zoxide init zsh)"
-alias cd=z
+#alias cd=z
 
 alias vim=nvim
+
+export VCPKG_ROOT=/opt/vcpkg
+export VCPKG_DOWNLOADS=/var/cache/vcpkg
+
+alias cd="source ~/.scripts/vcd"
