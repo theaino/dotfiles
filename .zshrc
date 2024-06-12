@@ -100,8 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 eval "$(zoxide init zsh)"
+eval "$(rbenv init -)"
+
 #alias cd=z
 
 alias vim=nvim
@@ -110,3 +111,6 @@ export VCPKG_ROOT=/opt/vcpkg
 export VCPKG_DOWNLOADS=/var/cache/vcpkg
 
 alias cd="source ~/.scripts/vcd"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
