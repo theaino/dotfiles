@@ -1,0 +1,89 @@
+@import url("../../.cache/wal/colors-gtk.css");
+
+* {
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 14px;
+  border-radius: 0;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  padding: 10px;
+  border-width: 0.16em;
+  border-style: solid;
+  border-image: linear-gradient(to right, @color3, @color4) 30;
+  animation: 100s linear infinite backgroundShade;
+  animation-delay: -85s;
+  animation-play-state: paused;
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+@keyframes backgroundShade {
+  0% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: @background;
+  }
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+/* Input */
+#input {
+  margin: 5px 20px;
+  padding: 10px;
+  border: none;
+  color: @color7;
+  background-color: transparent;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  border: none;
+  color: @color7;
+}
+
+#entry {
+  background-color: transparent;
+}
+
+#entry arrow {
+  border: none;
+  color: @color7;
+}
+
+/* Selected Entry */
+
+#entry:selected arrow {
+  color: @color4;
+}
+
+#entry:selected #text {
+  color: @color4;
+}
+

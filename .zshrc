@@ -1,14 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="alanpeabody"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -91,26 +91,97 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(zoxide init zsh)"
 eval "$(rbenv init -)"
 
-#alias cd=z
+eval "$(zoxide init zsh)"
+
+CHANGEDIR=cd
+
+for CCD in z; do
+	if [ ! -z $(command -v $CCD) ]; then
+		CHANGEDIR=$CCD
+	fi
+done
+
+function c () {
+	eval "$CHANGEDIR $@"
+
+	if [[ -z "$VIRTUAL_ENV" ]]; then
+		for venvname in virtualenv .virtualenv venv .venv env .env; do
+			if [[ -d "./$venvname" ]]; then
+				source "./$venvname/bin/activate"
+				break
+			fi
+		done
+	else
+		parentdir="$(dirname "$VIRTUAL_ENV")"
+		if [[ "$PWD"/ != "$parentdir"/* ]]; then
+			deactivate
+		fi
+	fi
+}
+
+c .
+
+
+export EDITOR=nvim
+
 
 alias vim=nvim
 
-export VCPKG_ROOT=/opt/vcpkg
-export VCPKG_DOWNLOADS=/var/cache/vcpkg
+alias rgr=ranger
 
-alias cd="source ~/.scripts/vcd"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# fnm
+FNM_PATH="/home/aino/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/aino/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# opam configuration
+[[ ! -r /home/aino/.opam/opam-init/init.zsh ]] || source /home/aino/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/go/bin:$PATH"
+
+#alias gvim="nvim --listen ~/.cache/nvim/godot.pipe ."
+
+export VCPKG_ROOT="/home/aino/bin/vcpkg/"
+export PATH="$PATH:$VCPKG_ROOT"
+
+export PATH="$PATH:/home/aino/bin/gf/"
+export PATH="$PATH:/home/aino/bin/glsldb/bin"
+
+
+if [[ $(cat /proc/sys/net/ipv6/conf/all/disable_ipv6) == 1 ]] ; then
+	echo "IPv6 is disabled (/etc/sysctl.conf)"
+fi
+
+PATH="/home/aino/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/aino/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/aino/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/aino/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/aino/perl5"; export PERL_MM_OPT;
+
+
+# Import colorscheme from 'wal' asynchronously
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh

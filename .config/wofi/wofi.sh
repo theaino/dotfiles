@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONFIG="$HOME/.config/wofi/$1/config"
-STYLE="$HOME/.config/wofi/$1/style.css"
+CONFIG="$HOME/.config/wofi/config"
+STYLE="$HOME/.config/wofi/style.css"
 
-printf "wofi --conf \"${CONFIG}\" --style \"${STYLE}\""
+(cd $(dirname $0) ; wofi --conf "${CONFIG}" --style "${STYLE}" --show drun)
