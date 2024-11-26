@@ -156,6 +156,7 @@ fi
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 
 #alias gvim="nvim --listen ~/.cache/nvim/godot.pipe ."
 

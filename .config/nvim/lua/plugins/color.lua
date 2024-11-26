@@ -13,8 +13,9 @@ return {
 		config = function()
 			require("bamboo").setup({
 				transparent = true,
+				term_colors = true,
 			})
-			--require('bamboo').load()
+			require('bamboo').load()
 		end,
 	},
 
@@ -30,8 +31,8 @@ return {
 				transparent_background = true,
 				terminal_colors = true
 			}
-			vim.cmd([[LushwalCompile]])
-			vim.cmd([[colorscheme lushwal]])
+			--vim.cmd([[LushwalCompile]])
+			--vim.cmd([[colorscheme lushwal]])
 		end
 	}
 }
