@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-wall_path=$(realpath "$(dirname "$(realpath $0)")/../wallpapers")
+wall_path=$(realpath "$(dirname "$(realpath $0)")/../../wallpapers")
 
 wallpaper="$(find -L $wall_path -type f | shuf -n 1)"
 
