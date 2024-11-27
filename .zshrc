@@ -140,8 +140,10 @@ export EDITOR=nvim
 
 
 alias vim=nvim
+alias v=nvim
 
 alias rgr=ranger
+alias r=ranger
 
 
 # fnm
@@ -155,7 +157,8 @@ fi
 [[ ! -r /home/aino/.opam/opam-init/init.zsh ]] || source /home/aino/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 export PATH=$HOME/.local/bin:$PATH
-export PATH="$HOME/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 #alias gvim="nvim --listen ~/.cache/nvim/godot.pipe ."
@@ -186,3 +189,7 @@ cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
