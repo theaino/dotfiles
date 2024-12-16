@@ -156,6 +156,8 @@ fi
 # opam configuration
 [[ ! -r /home/aino/.opam/opam-init/init.zsh ]] || source /home/aino/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+export PATH=$HOME/bin/tinygo/bin:$PATH
+
 export PATH=$HOME/.local/bin:$PATH
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -193,3 +195,5 @@ source ~/.cache/wal/colors-tty.sh
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+[[ -s "/home/aino/.gvm/scripts/gvm" ]] && source "/home/aino/.gvm/scripts/gvm"
