@@ -145,6 +145,7 @@ alias v=nvim
 alias rgr=ranger
 alias r=ranger
 
+alias cl='csvlens -dauto'
 
 # fnm
 FNM_PATH="/home/aino/.local/share/fnm"
