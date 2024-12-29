@@ -148,11 +148,12 @@ alias r=ranger
 alias cl='csvlens -dauto'
 
 # fnm
-FNM_PATH="/home/aino/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/aino/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+# FNM_PATH="/home/aino/.local/share/fnm"
+# if [ -d "$FNM_PATH" ]; then
+#   export PATH="/home/aino/.local/share/fnm:$PATH"
+#   eval "`fnm env`"
+# fi
+eval $(fnm env)
 
 # opam configuration
 [[ ! -r /home/aino/.opam/opam-init/init.zsh ]] || source /home/aino/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
