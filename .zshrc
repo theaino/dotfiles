@@ -145,6 +145,9 @@ alias v=nvim
 alias rgr=ranger
 alias r=ranger
 
+m () { udevil mount "/dev/$1" }
+um () { udevil unmount "/dev/$1" }
+
 alias cl='csvlens -dauto'
 
 # fnm
