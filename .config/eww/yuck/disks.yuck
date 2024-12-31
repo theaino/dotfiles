@@ -1,0 +1,11 @@
+(defpoll diskcount :interval "1s"
+	"~/.config/eww/scripts/disks.sh count")
+
+(defpoll disklist :interval "1s"
+	"~/.config/eww/scripts/disks.sh list")
+
+(defwidget disks []
+	(box :tooltip disklist
+		"D ${diskcount}")
+)
+

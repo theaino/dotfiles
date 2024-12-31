@@ -1,83 +1,38 @@
-(defpoll w0
-	:interval "0.1s"
-	"~/.config/eww/scripts/workspace.py 0")
+(include "yuck/widgets.yuck")
 
-(defpoll w1
-	:interval "0.1s"
-	"~/.config/eww/scripts/workspace.py 1")
-
-(defpoll time :interval "2s"
-  "date '+%H:%M %b %d, %Y'")
-
-(defpoll bat :interval "10s"
-	"~/.config/eww/scripts/battery.sh")
-
-(defpoll headset :interval "1s"
-	"~/.config/eww/scripts/headset.sh")
-
-(defwidget workspace0 []
-	(box :class "workspace"
-		(button
-			w0
-			)))
-
-(defwidget workspace1 []
-	(box :class "workspace"
-		(button
-			w1
-			)))
-
-(defwidget time []
-	(box :class "time"
-		time
-		))
-
-(defwidget bat []
-	(box :class "bat" :halign "start"
-		bat
-		))
-
-(defwidget headset []
-	(box :class "bat" :halign "end"
-		headset
-		))
-
-(defwidget tray []
- (box :orientation "h" :class "tray" :halign "end"
- 	(systray :pack-direction "rtl" :class "tray")))
+(defwidget barwidgets []
+	(box 
+		(bat)
+		(workspace0)
+		(time)
+		(tray)
+		(misc))
+)
 
 (defwindow bar0 []
- :monitor 0
- :windowtype "dock"
- :stacking "fg"
- :exclusive true
- :geometry (geometry :x "0%"
-	 :y "0%"
-	 :width "100%"
-	 :height "10px"
-	 :anchor "top center")
- :reserve (struts :side "top" :distance "4%")
- (box 
-	(bat)
-	(workspace0)
-	(time)
-	(tray)
-	(headset)))
+	:monitor 0
+	:windowtype "dock"
+	:stacking "fg"
+	:exclusive true
+	:geometry (geometry :x "0%"
+		:y "0%"
+		:width "100%"
+		:height "10px"
+		:anchor "top center")
+	:reserve (struts :side "top" :distance "4%")
+	(barwidgets)
+)
 
 (defwindow bar1 []
- :monitor 1
- :windowtype "dock"
- :stacking "fg"
- :exclusive true
- :geometry (geometry :x "0%"
-	 :y "0%"
-	 :width "100%"
-	 :height "10px"
-	 :anchor "top center")
- :reserve (struts :side "top" :distance "4%")
- (box 
-	(bat)
-	(workspace1)
-	(time)
-	(tray)
-	(headset)))
+	:monitor 1
+	:windowtype "dock"
+	:stacking "fg"
+	:exclusive true
+	:geometry (geometry :x "0%"
+		:y "0%"
+		:width "100%"
+		:height "10px"
+		:anchor "top center")
+	:reserve (struts :side "top" :distance "4%")
+	(barwidgets)
+	)

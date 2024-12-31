@@ -15,7 +15,7 @@
   "neo-tree.nvim": { "branch": "v3.x", "commit": "a77af2e764c5ed4038d27d1c463fa49cd4794e07" },
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-comment": { "branch": "main", "commit": "e9ac16ab056695cad6461173693069ec070d2b23" },
-  "nvim-treesitter": { "branch": "master", "commit": "0a0e2e354b770d709a327bc51f7b4ddeae927ba7" },
+  "nvim-treesitter": { "branch": "master", "commit": "5f78e989243f9fb0fb55e0cf54820920d86dfd30" },
   "nvim-web-devicons": { "branch": "master", "commit": "4adeeaa7a32d46cf3b5833341358c797304f950a" },
   "persistence.nvim": { "branch": "main", "commit": "f6aad7dde7fcf54148ccfc5f622c6d5badd0cc3d" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
