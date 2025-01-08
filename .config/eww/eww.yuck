@@ -1,9 +1,18 @@
 (include "yuck/widgets.yuck")
 
-(defwidget barwidgets []
+(defwidget barwidgets0 []
 	(box 
 		(bat)
 		(workspace0)
+		(time)
+		(tray)
+		(misc))
+)
+
+(defwidget barwidgets1 []
+	(box 
+		(bat)
+		(workspace1)
 		(time)
 		(tray)
 		(misc))
@@ -20,7 +29,7 @@
 		:height "10px"
 		:anchor "top center")
 	:reserve (struts :side "top" :distance "4%")
-	(barwidgets)
+	(barwidgets0)
 )
 
 (defwindow bar1 []
@@ -34,5 +43,5 @@
 		:height "10px"
 		:anchor "top center")
 	:reserve (struts :side "top" :distance "4%")
-	(barwidgets)
+	(barwidgets1)
 	)

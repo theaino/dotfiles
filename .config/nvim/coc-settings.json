@@ -1,0 +1,12 @@
+{
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": false,
+	"languageserver": {
+		"gleam": {
+			"command": ["gleam", "lsp"],
+			"filetypes": ["gleam"],
+			"rootPatterns": ["gleam.toml"]
+		}
+	},
+	"coc.preferences.formatOnSaveFiletypes": ["gleam"]
+}
