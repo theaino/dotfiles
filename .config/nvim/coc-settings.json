@@ -8,5 +8,22 @@
 			"rootPatterns": ["gleam.toml"]
 		}
 	},
-	"coc.preferences.formatOnSaveFiletypes": ["gleam"]
+	"coc.preferences.formatOnSaveFiletypes": ["gleam"],
+
+  "python.pythonPath": "python",
+
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.typescript.enable": true,
+  "svelte.plugin.svelte.format.enable": true,
+  "typescript.suggestionActions.enabled": true,
+  "typescript.format.enabled": true,
+  "languageserver": {
+    "svelte": {
+      "enable": true,
+      "filetypes": ["svelte"],
+      "settings": {
+        "svelte.plugin.typescript.diagnostics.enable": true
+      }
+    }
+  }
 }

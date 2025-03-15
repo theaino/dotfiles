@@ -1,0 +1,14 @@
+[language-server.v-analyzer]
+command = "/home/aino/.local/bin/v-analyzer/bin/v-analyzer"
+args = [ "--stdio" ]
+
+[[language]]
+name = "v"
+roots = [ "v.mod" ]
+file-types = ["v", "vv"]
+language-servers = [ "v-analyzer" ]
+
+[[language]]
+name = "verilog"
+file-types = ["vh", "sv", "svh"]
+

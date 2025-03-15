@@ -135,15 +135,26 @@ function c () {
 
 c .
 
+export PATH="$PATH:$HOME/.config/scripts"
 
-export EDITOR=nvim
+
+export EDITOR=hx
 
 
 alias vim=nvim
-alias v=nvim
+# alias v=nvim
 
 alias rgr=ranger
 alias r=ranger
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 m () { udevil mount "/dev/$1" }
 um () { udevil unmount "/dev/$1" }
@@ -202,3 +213,17 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 
 [[ -s "/home/aino/.gvm/scripts/gvm" ]] && source "/home/aino/.gvm/scripts/gvm"
+
+
+export PATH="$PATH:$HOME/.cargo/bin"
+
+
+function esp () {
+	source /opt/esp-idf/export.sh
+}
+
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+
+cat ~/.cache/wal/sequences

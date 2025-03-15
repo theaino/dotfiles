@@ -4,6 +4,7 @@ return {
 		keys = {
 			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Git blame" },
 			{ "<leader>gd", "<cmd>Git diff<cr>", desc = "Git diff" },
+			{ "<leader>gf", "<cmd>Gdiffsplit<cr>", desc = "Git file diff" },
 			{ "<leader>gs", "<cmd>Git status<cr>", desc = "Git status" },
 			{ "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
 			{ "<leader>gc", function()

@@ -1,0 +1,10 @@
+[terminal]
+[terminal.shell]
+args = ["-l", "-c", "zellij"]
+program = "/usr/bin/bash"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
