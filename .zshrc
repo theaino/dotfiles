@@ -227,3 +227,8 @@ function esp () {
 
 
 cat ~/.cache/wal/sequences
+
+alias y="TERM=xterm-kitty y"
+
+
+alias aic="~/Documents/dev/aicli/main.py"
