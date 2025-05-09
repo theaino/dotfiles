@@ -12,6 +12,14 @@ language-servers = [ "v-analyzer" ]
 name = "verilog"
 file-types = ["vh", "sv", "svh"]
 
+[language-server.snippets-ls]
+command = "snippets-ls"
+args = ["-config", "/home/aino/.config/helix/snippets/tex-snippets.json"]
+
+[[language]]
+name = "latex"
+language-servers = ["texlab", "snippets-ls"]
+
 [language-server.ruby-lsp]
 command = "bundle"
 args = ["exec", "ruby-lsp"]

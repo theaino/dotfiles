@@ -33,7 +33,7 @@ newline = "none"
 
 [keys.normal]
 C-c = ":buffer-close"
-C-x = ":write-quit"
+# C-x = ":write-quit"
 
 
 # Yazi picker with zellij
@@ -48,7 +48,7 @@ O = ["open_above", "normal_mode"]
 "_" = "goto_first_nonwhitespace"
 G = "goto_file_end"
 "%" = "match_brackets"
-V = ["select_mode", "extend_to_line_bounds"]
+V = ["goto_line_end", "select_mode"]
 D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
 S = "surround_add"
 
@@ -63,10 +63,14 @@ C-e = ":pipe ~/.config/helix/bin/emmet.py"
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
 
+# https://github.com/quantonganh/snippets-ls
+A-ret = "goto_next_tabstop"
+
 [keys.select]
 "$" = "goto_line_end"
 G = "goto_file_end"
 "%" = "match_brackets"
+"_" = "goto_first_nonwhitespace"
 S = "surround_add"
 u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
 U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]

@@ -138,7 +138,7 @@ c .
 export PATH="$PATH:$HOME/.config/scripts"
 
 
-export EDITOR=hx
+export EDITOR=nvim
 
 
 alias vim=nvim
