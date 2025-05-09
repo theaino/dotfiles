@@ -27,7 +27,11 @@ function c () {
 	fi
 }
 
-
 export EDITOR=nvim
 alias vim=nvim
 alias y=yazi
+
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
