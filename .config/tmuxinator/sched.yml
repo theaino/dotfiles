@@ -1,0 +1,6 @@
+name: sched
+root: ~/Documents/kneu/schedulu
+windows:
+  - editor: nvim
+  - scratch:
+  - server: bin/rails server

@@ -1,9 +1,16 @@
 source $HOME/.config/zsh/polyglot/polyglot.sh
 
 
-# Misc
+# Keys
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
 
+# Inits
+eval "$(rbenv init -)"
 eval "$(zoxide init zsh)"
+
+
+# Misc
 
 function c () {
 	eval "z $@"
@@ -23,11 +30,12 @@ function c () {
 	fi
 }
 
+# Opts
+
 export EDITOR=nvim
 alias vim=nvim
 alias y=yazi
 
+alias t="tmuxinator"
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+
