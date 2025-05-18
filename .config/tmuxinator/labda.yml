@@ -1,0 +1,5 @@
+name: labda
+root: ~/Documents/dev/labda
+windows:
+  - editor: nvim
+  - scratch:

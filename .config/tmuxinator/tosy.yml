@@ -1,0 +1,6 @@
+name: tosy
+root: ~/Documents/dev/tosybopu
+windows:
+  - editor: nvim
+  - scratch:
+  - templ: make watch

@@ -1,0 +1,5 @@
+name: meth
+root: ~/Documents/dev/gometh
+windows:
+  - editor: nvim
+  - scratch:

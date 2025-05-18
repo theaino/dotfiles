@@ -1,6 +1,8 @@
 export TERMCMD="st"
 
 
+xrandr
+
 while true; do
 	xsetroot -name "$(date '+%H:%M') | $( acpi | gawk 'match($0, /([0-9]+%)/, a) {print a[1]}' )"
   sleep 1m

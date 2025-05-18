@@ -13,14 +13,16 @@ set -U fish_greeting
 # Lazy loading #
 ################
 
-# Zoxide
-function c
-	zoxide init --cmd=c fish | source
-	c $argv
-end
+
+source $(echo '
 
 # Rbenv
-source ~/.config/fish/rbenv.fish
+rbenv init - | source
+
+# Zoxide
+zoxide init --cmd=c fish | source
+
+' | lazysh fish)
 
 
 ###########
@@ -32,3 +34,11 @@ set -gx EDITOR nvim
 alias vim=nvim
 alias y=yazi
 alias t=tmuxinator
+
+
+########
+# Path #
+########
+
+export GOPATH=$(go env GOPATH)
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"

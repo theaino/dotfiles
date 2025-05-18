@@ -1,0 +1,5 @@
+name: lash
+root: ~/Documents/dev/lazysh
+windows:
+  - editor: vim
+  - scratch:

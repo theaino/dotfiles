@@ -1,0 +1,5 @@
+name: rak
+root: ~/Documents/dev/rak-hundeverein
+windows:
+  - editor: nvim
+  - scratch:

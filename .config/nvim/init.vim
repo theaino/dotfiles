@@ -41,6 +41,10 @@ Plug 'mikavilpas/yazi.nvim'
 
 Plug 'mattn/emmet-vim'
 	let g:user_emmet_leader_key=","
+	let g:user_emmet_install_global = 0
+	autocmd FileType html,css,eruby EmmetInstall
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -66,5 +70,24 @@ vim.keymap.set("n", "<A-3>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<A-4>", function() harpoon:list():select(4) end)
 EOF
 
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+
+nnoremap <leader>o :LspCodeAction<cr>
+
 nnoremap <leader>ld :edit config/locales/de.yml<cr>
 nnoremap <leader>le :edit config/locales/en.yml<cr>
+
+
+runtime go.vim
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
