@@ -1,0 +1,5 @@
+name: c
+root: .
+windows:
+  - editor: vim
+  - scratch:

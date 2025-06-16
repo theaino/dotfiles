@@ -1,0 +1,9 @@
+name: hm
+root: ~/
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - btop
+        - sleep 1; cmatrix -B
+        - while true; tree / -a; end
