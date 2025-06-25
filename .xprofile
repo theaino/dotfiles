@@ -1,7 +1,20 @@
 export TERMCMD="st"
+export COLORTERM="truecolor"
 
 
 xrandr
+
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+echo XRESOURCES
+
+while true; do
+	inotifywait ~/.Xresources
+	[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+done &
+
+# Background
+xsetroot -solid $(xrdb -query | grep '*.background' | awk '{ print $2 }')
 
 setxkbmap -option caps:swapescape
 

@@ -1,3 +1,5 @@
 .config/eww/colors.scss
 .config/hypr/scripts/wall/lastwall
 .config/kitty/themes/colors-kitty.conf
+
+.config/fish/conf.d/venice.fish

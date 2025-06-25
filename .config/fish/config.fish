@@ -35,10 +35,10 @@ alias vim=nvim
 alias y=yazi
 alias t=tmuxinator
 
-
 ########
 # Path #
 ########
 
 export GOPATH=$(go env GOPATH)
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
