@@ -527,8 +527,8 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	/*RULE(.class = "Gimp", .tags = 1 << 4)
+	RULE(.class = "Firefox", .tags = 1 << 7)*/
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH
@@ -1030,10 +1030,13 @@ ResourcePref resources[] = {
 static const char *incvol[] = {"/usr/bin/amixer", "set", "Master", "5+", NULL};
 static const char *decvol[] = {"/usr/bin/amixer", "set", "Master", "5-", NULL};
 
+static const char screenshotcmd[] = "shotgun -g $(hacksaw) - | xclip -t 'image/png' -selection clipboard";
+
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
 	{ 0,				XF86XK_AudioLowerVolume,spawn,{.v = decvol} },	
 	{ 0,				XF86XK_AudioRaiseVolume,spawn,{.v = incvol} },
+	{ 0,														XK_Print,			 spawn,									 SHCMD(screenshotcmd) },
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH

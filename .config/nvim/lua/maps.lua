@@ -57,7 +57,7 @@ map("n", "<leader>h", function()
 	if string.find(vim.api.nvim_get_mode().mode, "t") then
 		vim.cmd("close")
 	else
-		require("aider").AiderOpen("--model openai/deepseek-coder-v2-lite --no-auto-commits --no-show-model-warnings", "vsplit")
+		require("aider").AiderOpen("--model openai/qwen-2.5-coder-32b --no-auto-commits --no-show-model-warnings", "vsplit")
 		vim.cmd("vert wincmd L")
 		vim.cmd("vert res 65")
 	end
