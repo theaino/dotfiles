@@ -49,7 +49,8 @@ map("n", "<leader>o", ":LspCodeAction<cr>")
 map("n", "<leader>ld", ":edit config/locales/de.yml<cr>")
 map("n", "<leader>le", ":edit config/locales/en.yml<cr>")
 
--- Exit terminal mode
+-- Terminal mode
+map("n", "<leader>t", ":vsplit term://fish<cr>")
 map("t", "<C-e>", "<C-\\><C-n>")
 
 -- Aider

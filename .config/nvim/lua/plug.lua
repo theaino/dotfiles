@@ -84,3 +84,5 @@ later(function()
 		default_bindings = false,
 	})
 end)
+
+add("tidalcycles/vim-tidal")
