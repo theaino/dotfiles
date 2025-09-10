@@ -43,4 +43,4 @@ alias t=tmuxinator
 
 export GOPATH=$(go env GOPATH)
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
-
+export PATH="$PATH:$HOME/.cargo/bin"
